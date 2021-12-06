@@ -22,7 +22,7 @@ function handleClick() {
 //});
 
 var weatherContainerEl = document.querySelector("weather-container");
-textInputEl.append(weather-container);
+t//extInputEl.append(weather-container);
 
 var getWeather = function(city) {
   var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=c153f79bfc1e5d24b20be0ac9d41ee78";
