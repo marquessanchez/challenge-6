@@ -8,4 +8,6 @@ Users will be able to see:
 -UV Index
 - 5 day forcast 
 
+DEPLOYED APP: https://marquessanchez.github.io/weather-dashboard/
+
 <img width="1365" alt="Screen Shot 2022-04-02 at 1 16 11 AM" src="https://user-images.githubusercontent.com/92193502/161367636-990108a8-25df-4c8c-87bf-a5039f7aeda8.png">
