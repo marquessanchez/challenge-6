@@ -2,6 +2,8 @@ $('button').on('click', handleClick);
 var today = document.querySelector("#weather")
 var textInputEl = document.querySelector("#text-input");
 var citySearchEl = document.querySelector("#city-search");
+var dataApi;
+var fiveday;
 // var buttonEl = document.querySelector("#search-btn");
 function handleClick() {
   let history = localStorage.history;
@@ -14,7 +16,7 @@ function handleClick() {
 };
 
 var weatherContainerEl = document.querySelector("weather-container");
-//textInputEl.append(weather-container);
+var fiveDayEl = document.querySelector("col-8");
 
 var getWeather = function(city) {
   var url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${weather_key}`
@@ -26,14 +28,13 @@ var getWeather = function(city) {
         let lat = data[0].lat;
         let lon = data[0].lon;
         
-        var fiveday = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weather_key}`
-        fetch(url).then(function(response){
+        var fiveDayUrl = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weather_key}&units=imperial`
+        fetch(fiveDayUrl).then(response => {
           if (response.ok){
             response.json().then(data=> {
-              console.log(data);
+              console.log("whats up");
               dataApi = data;
-
-              document.getElementById('fiveday').append += dataApi.daily;
+              document.getElementById('fiveday').append.dataApi;
             })
           }
         });
@@ -57,18 +58,18 @@ var getWeather = function(city) {
     }}
     )
   };
-
-        // for (let i = 7; i < data.list.length; i=i+8) {
-        //   let weather = data.list[i];
-         $('fiveday').append(`
-            <div class="col-md-2 bg-secondary ms-5 px-2 pt-3 text-white">
-        //       <h6>3/31/2021</h6>
-        //       <span>icon</span>
-        //       <h6>Temp:73.72 F</h6>
-        //       <h6>Wind: 9.53 MPH</h6>
-        //       <h6>Humidity: 66 %</h6>
-        //     </div>
-        //   `)
+          // $('fiveday').append(dataApi.daily);
+        // // for (let i = 7; i < data.list.length; i=i+8) {
+        // //   let weather = data.list[i];
+        //  $('fiveday').append(`
+        //     <div class="col-md-2 bg-secondary ms-5 px-2 pt-3 text-white">
+        // //       <h6>3/31/2021</h6>
+        // //       <span>icon</span>
+        // //       <h6>Temp:73.72 F</h6>
+        // //       <h6>Wind: 9.53 MPH</h6>
+        // //       <h6>Humidity: 66 %</h6>
+        // //     </div>
+        // //   `)
       // displayWeather(data);
 
 var displayWeather = function(data){
